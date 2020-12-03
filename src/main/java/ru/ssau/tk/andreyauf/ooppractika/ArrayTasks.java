@@ -158,4 +158,29 @@ public class ArrayTasks {
         }
         return null;
     }
+    public int[] symmetricArray(int l) {
+        int[] symmetric = new int[l];
+        if (l % 2 != 0) {
+            for (int i = 0; i <= (l / 2); i++) {
+                symmetric[i] = i + 1;
+            }
+            int k = (l / 2) + 1;
+            for (int j = l / 2 + 1; j < l; j++) {
+                symmetric[j] = k - 1;
+                k--;
+            }
+            return symmetric;
+        }
+        {
+            for (int i = 0; i < (l / 2); i++) {
+                symmetric[i] = i + 1;
+            }
+            int k = (l / 2);
+            for (int j = l / 2; j < l; j++) {
+                symmetric[j] = k;
+                k--;
+            }
+            return symmetric;
+        }
+    }
 }

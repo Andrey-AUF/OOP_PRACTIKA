@@ -137,4 +137,12 @@ public class ArrayTasksTest {
         int[] checkNewArray = new int[]{};
         assertNull(array.findMax(checkNewArray));
     }
+    @Test
+    public void testSymmetricArray() {
+        ArrayTasks checkSymmetric = new ArrayTasks();
+        assertEquals(checkSymmetric.symmetricArray(7), new int[]{1, 2, 3, 4, 3, 2, 1});
+        assertEquals(checkSymmetric.symmetricArray(6), new int[]{1, 2, 3, 3, 2, 1});
+        assertEquals(checkSymmetric.symmetricArray(5), new int[]{1, 2, 3, 2, 1});
+    }
+
 }
