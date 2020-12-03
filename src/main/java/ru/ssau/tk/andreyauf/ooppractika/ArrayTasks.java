@@ -146,4 +146,16 @@ public class ArrayTasks {
         }
         return k;
     }
+    public Integer findMax(int[] arrayValues) {
+        if (arrayValues.length > 0) {
+            int maxValue = arrayValues[0];
+            for (int i = 1; i < arrayValues.length; i++) {
+                if (arrayValues[i] > maxValue) {
+                    maxValue = arrayValues[i];
+                }
+            }
+            return maxValue;
+        }
+        return null;
+    }
 }
