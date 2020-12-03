@@ -100,4 +100,13 @@ public class ArrayTasksTest {
         assertTrue(ArrayTasks.findNumberInArray(array, 65));
         assertFalse(ArrayTasks.findNumberInArray(array, 7));
     }
+    @Test
+    public void testCheckNull() {
+        Integer[] array = new Integer[]{2, 5, 6, null};
+        assertTrue(ArrayTasks.checkNull(array));
+        Integer[] arrayToo = new Integer[]{3, 2, 1};
+        assertFalse(ArrayTasks.checkNull(arrayToo));
+        Integer[] arrayNew = new Integer[]{null, 0, 1, null};
+        assertTrue(ArrayTasks.checkNull(arrayNew));
+    }
 }
