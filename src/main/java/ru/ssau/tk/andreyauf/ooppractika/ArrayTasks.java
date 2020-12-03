@@ -132,4 +132,9 @@ public class ArrayTasks {
         }
         return false;
     }
+    static void changeSign(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = -1 * array[i];
+        }
+    }
 }

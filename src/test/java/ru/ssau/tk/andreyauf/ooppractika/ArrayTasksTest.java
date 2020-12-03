@@ -109,4 +109,12 @@ public class ArrayTasksTest {
         Integer[] arrayNew = new Integer[]{null, 0, 1, null};
         assertTrue(ArrayTasks.checkNull(arrayNew));
     }
+    @Test
+    public void testChangeSign() {
+        int[] array = {6, 6, 6};
+        ArrayTasks.changeSign(array);
+        assertEquals(array[0], -6);
+        assertEquals(array[1], -6);
+        assertEquals(array[2], -6);
+    }
 }
