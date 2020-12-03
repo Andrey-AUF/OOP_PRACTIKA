@@ -137,4 +137,13 @@ public class ArrayTasks {
             array[i] = -1 * array[i];
         }
     }
+    public int countEvenNumbers(int[] numbers) {
+        int k = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                k++;
+            }
+        }
+        return k;
+    }
 }

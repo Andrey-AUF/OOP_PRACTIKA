@@ -117,4 +117,14 @@ public class ArrayTasksTest {
         assertEquals(array[1], -6);
         assertEquals(array[2], -6);
     }
+    @Test
+    public void testCountEvenNumbers() {
+        ArrayTasks checkNumbers = new ArrayTasks();
+        int[] arrayOne = new int[]{1, 2, 3, 4, 5, 6, 10};
+        assertEquals(checkNumbers.countEvenNumbers(arrayOne), 4);
+        int[] arrayTwo = new int[]{12, 55, 6, 89, 12, 22, 24, 86, 666};
+        assertEquals(checkNumbers.countEvenNumbers(arrayTwo), 7);
+        int[] arrayThree = new int[]{1, 3, 5, 7, 9, 11, 97, 15, 21, 55, 91};
+        assertEquals(checkNumbers.countEvenNumbers(arrayThree), 0);
+    }
 }
