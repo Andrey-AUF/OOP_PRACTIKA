@@ -144,5 +144,12 @@ public class ArrayTasksTest {
         assertEquals(checkSymmetric.symmetricArray(6), new int[]{1, 2, 3, 3, 2, 1});
         assertEquals(checkSymmetric.symmetricArray(5), new int[]{1, 2, 3, 2, 1});
     }
+    @Test
+    public void testSumOfEvenIndex() {
+        ArrayTasks checkSum = new ArrayTasks();
+        assertEquals(checkSum.sumOfEvenIndex(new int[]{1, 2, 3, 4, 5, 6, 10}), 19);
+        assertEquals(checkSum.sumOfEvenIndex(new int[]{5, 5, 5, 5, 5, 5, 5}), 20);
+        assertEquals(checkSum.sumOfEvenIndex(new int[]{-1, 2, -3, 4, -5, 6, -10}), -19);
+    }
 
 }
