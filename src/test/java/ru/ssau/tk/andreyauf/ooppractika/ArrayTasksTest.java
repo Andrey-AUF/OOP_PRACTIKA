@@ -209,4 +209,15 @@ public class ArrayTasksTest {
         int[] yesArrayTwo = {17, -1, 2, 4};
         assertEquals(check.arrayBitwiseNot(yesArrayTwo), new int[]{-18, 0, -3, -5});
     }
+    @Test
+    public void testFindEvenNumbers() {
+        int[] arrayOne = {1, 2, 3, 4, 5};
+        assertEquals(ArrayTasks.findEvenNumbers(arrayOne), new boolean[]{false, true, false, true, false});
+        int[] arrayTwo = {2, 4, 6, 8, 10};
+        assertEquals(ArrayTasks.findEvenNumbers(arrayTwo), new boolean[]{true, true, true, true, true});
+        int[] arrayThree = {1, 3, 5, 7, 9};
+        assertEquals(ArrayTasks.findEvenNumbers(arrayThree), new boolean[]{false, false, false, false, false});
+        int[] arrayFour = {-1, 3, -5, 4, 0};
+        assertEquals(ArrayTasks.findEvenNumbers(arrayFour), new boolean[]{false, false, false, true, true});
+    }
 }
