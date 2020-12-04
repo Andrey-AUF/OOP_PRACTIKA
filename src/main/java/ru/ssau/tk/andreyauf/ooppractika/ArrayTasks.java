@@ -272,4 +272,18 @@ public class ArrayTasks {
         }
         return bool;
     }
+    static int[][] createTwoDimensionalArray(int n) {
+        int[][] array = new int[n][];
+        int m = n;
+        int k = 1;
+        for (int i = 0; i < n; i++) {
+            array[i] = new int[m];
+            for (int j = 0; j < m; j++) {
+                array[i][j] = k;
+                k++;
+            }
+            m--;
+        }
+        return array;
+    }
 }

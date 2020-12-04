@@ -220,4 +220,12 @@ public class ArrayTasksTest {
         int[] arrayFour = {-1, 3, -5, 4, 0};
         assertEquals(ArrayTasks.findEvenNumbers(arrayFour), new boolean[]{false, false, false, true, true});
     }
+    @Test
+    public void testCreateTwoDimensionalArray() {
+        assertEquals(ArrayTasks.createTwoDimensionalArray(3), new int[][]{{1, 2, 3}, {4, 5}, {6}});
+        assertEquals(ArrayTasks.createTwoDimensionalArray(2), new int[][]{{1, 2}, {3}});
+        assertEquals(ArrayTasks.createTwoDimensionalArray(1), new int[][]{{1}});
+        assertEquals(ArrayTasks.createTwoDimensionalArray(5), new int[][]{{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {10, 11, 12}, {13, 14}, {15}});
+    }
+
 }
