@@ -286,4 +286,14 @@ public class ArrayTasks {
         }
         return array;
     }
+    public static void main(String[] args) {
+        String[] str = {"I ", "love ", "Java"};
+        printStrings(str);
+    }
+
+    static void printStrings(String[] str) {
+        for (String s : str) {
+            System.out.print(s);
+        }
+    }
 }
