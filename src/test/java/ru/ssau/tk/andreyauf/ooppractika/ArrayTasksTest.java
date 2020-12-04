@@ -233,5 +233,21 @@ public class ArrayTasksTest {
         assertEquals(ArrayTasks.sumNextElements(new int[]{0, -7, 30}), new int[]{-7, 30});
         assertEquals(ArrayTasks.sumNextElements(new int[]{1, 2, 3, 4, -8, 0, 9}), new int[]{3, 7, -8, 9});
     }
+    @Test
+    public void testConvertLongToTwoInts() {
+        assertEquals(ArrayTasks.convertLongToTwoInts(-2L), new int[]{-1, -2});
+        assertEquals(ArrayTasks.convertLongToTwoInts(126L), new int[]{0, 126});
+        assertEquals(ArrayTasks.convertLongToTwoInts(1L), new int[]{0, 1});
+        assertEquals(ArrayTasks.convertLongToTwoInts(0), new int[]{0, 0});
+        assertEquals(ArrayTasks.convertLongToTwoInts(15L), new int[]{0, 15});
+        assertEquals(ArrayTasks.convertLongToTwoInts(-33), new int[]{-1, -33});
+    }
+
+    @Test
+    public void testConvertTwoIntsToLong() {
+        assertEquals(ArrayTasks.convertTwoIntsToLong(1, -2), -2);
+        assertEquals(ArrayTasks.convertTwoIntsToLong(2, 2), 8589934594L);
+        assertEquals(ArrayTasks.convertTwoIntsToLong(0, 1), 1);
+    }
 
 }

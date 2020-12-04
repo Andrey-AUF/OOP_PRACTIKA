@@ -311,4 +311,11 @@ public class ArrayTasks {
         resultArray[resultArray.length - 1] = array[array.length - 1];
         return resultArray;
     }
+    public static int[] convertLongToTwoInts(long number) {
+        return new int[]{(int) (number >> 32), (int) number};
+    }
+
+    public static long convertTwoIntsToLong(int first, int last) {
+        return ((long) last | (long) first << 32);
+    }
 }
