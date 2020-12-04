@@ -227,5 +227,11 @@ public class ArrayTasksTest {
         assertEquals(ArrayTasks.createTwoDimensionalArray(1), new int[][]{{1}});
         assertEquals(ArrayTasks.createTwoDimensionalArray(5), new int[][]{{1, 2, 3, 4, 5}, {6, 7, 8, 9}, {10, 11, 12}, {13, 14}, {15}});
     }
+    @Test
+    public void testSumNextElements() {
+        assertEquals(ArrayTasks.sumNextElements(new int[]{10, 20, 30}), new int[]{30, 30});
+        assertEquals(ArrayTasks.sumNextElements(new int[]{0, -7, 30}), new int[]{-7, 30});
+        assertEquals(ArrayTasks.sumNextElements(new int[]{1, 2, 3, 4, -8, 0, 9}), new int[]{3, 7, -8, 9});
+    }
 
 }

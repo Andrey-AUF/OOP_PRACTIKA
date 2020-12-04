@@ -296,4 +296,19 @@ public class ArrayTasks {
             System.out.print(s);
         }
     }
+    public static int[] sumNextElements(int[] array) {
+        if (array.length % 2 == 0) {
+            int[] resultArray = new int[array.length / 2];
+            for (int i = 0, j = 0; j != array.length; i++, j += 2) {
+                resultArray[i] = array[j] + array[j + 1];
+            }
+            return resultArray;
+        }
+        int[] resultArray = new int[array.length / 2 + 1];
+        for (int i = 0, j = 0; j != array.length - 1; i++, j += 2) {
+            resultArray[i] = array[j] + array[j + 1];
+        }
+        resultArray[resultArray.length - 1] = array[array.length - 1];
+        return resultArray;
+    }
 }
