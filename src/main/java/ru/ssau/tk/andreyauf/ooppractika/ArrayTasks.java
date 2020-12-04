@@ -192,4 +192,35 @@ public class ArrayTasks {
         }
         return sum;
     }
+    static boolean findMoreDivisors(int[] values) {
+        int k1 = 0;
+        int k2 = 0;
+        for (int value : values) {
+            if (values[0] % value == 0) {
+                k1++;
+            }
+            if (values[values.length - 1] % value == 0) {
+                k2++;
+            }
+        }
+        return k1 > k2;
+    }
+    public int findMostCommonElement(int[] numbers) {
+        int num = numbers[0];
+        int max_common = 1;
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int common = 1;
+            for (int k = i + 1; k < numbers.length; k++) {
+                if (numbers[i] == numbers[k]) {
+                    common += 1;
+                }
+                if (common > max_common) {
+                    max_common = common;
+                    num = numbers[i];
+                    return numbers[i];
+                }
+            }
+        }
+        return 0;
+    }
 }

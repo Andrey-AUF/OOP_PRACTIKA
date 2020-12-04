@@ -151,5 +151,23 @@ public class ArrayTasksTest {
         assertEquals(checkSum.sumOfEvenIndex(new int[]{5, 5, 5, 5, 5, 5, 5}), 20);
         assertEquals(checkSum.sumOfEvenIndex(new int[]{-1, 2, -3, 4, -5, 6, -10}), -19);
     }
-
+    @Test
+    public void testFindMoreDivisors() {
+        int[] numbersOne = {27, 3, 9, 8, 2, 4, 6, 12, 24};
+        assertFalse(ArrayTasks.findMoreDivisors(numbersOne));
+        int[] numbersTwo = {12, 4, 3, 2, 6, 1, 17, 18, 25};
+        assertTrue(ArrayTasks.findMoreDivisors(numbersTwo));
+        int[] numbersThree = {27, 3, 9, 8, 6, 12, 24};
+        assertFalse(ArrayTasks.findMoreDivisors(numbersThree));
+    }
+    @Test
+    public void testFindMostCommonElement() {
+        int[] checkNumbers = {1, 1, 1, 2, 3, 3, 3, 4, 7, 6, 5};
+        ArrayTasks check = new ArrayTasks();
+        assertEquals(check.findMostCommonElement(checkNumbers), 1);
+        int[] checkNumbersTwo = {1, 2, 3, 4, 5, 11, 47, 89, 5, 32, 5, 4};
+        assertEquals(check.findMostCommonElement(checkNumbersTwo), 4);
+        int[] checkNumbersThree = {0, -2, 3, 0, -5, 0, -4, 6, 0, 6};
+        assertEquals(check.findMostCommonElement(checkNumbersThree), 0);
+    }
 }
