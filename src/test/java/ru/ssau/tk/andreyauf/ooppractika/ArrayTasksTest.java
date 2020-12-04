@@ -189,4 +189,15 @@ public class ArrayTasksTest {
         ArrayTasks.exchangedMaxAndMin(arrayThird);
         assertEquals(arrayThird, new int[]{7, 0, 2, 0, 0});
     }
+    @Test
+    public void testBitwiseNOT() {
+        int[] array = {12, 15, 56};
+        ArrayTasks.bitwiseNOT(array);
+        assertEquals(array, new int[]{-13, -16, -57});
+        ArrayTasks.bitwiseNOT(array);
+        assertEquals(array, new int[]{12, 15, 56});
+        int[] newArray = {-2, 5, -6};
+        ArrayTasks.bitwiseNOT(newArray);
+        assertEquals(newArray, new int[]{1, -6, 5});
+    }
 }
