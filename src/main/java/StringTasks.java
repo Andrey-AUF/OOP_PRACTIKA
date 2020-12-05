@@ -41,4 +41,8 @@ public class StringTasks {
         return str.equals(palindrome);
 
     }
+
+    public static int findSubstringInString(String str, String subStr) {
+        return str.indexOf(subStr);
+    }
 }
