@@ -45,4 +45,9 @@ public class StringTasks {
     public static int findSubstringInString(String str, String subStr) {
         return str.indexOf(subStr);
     }
+
+    public static int findSubstringInSecondHalfString(String str, String substring) {
+        return str.indexOf(substring, str.length() / 2);
+    }
+
 }

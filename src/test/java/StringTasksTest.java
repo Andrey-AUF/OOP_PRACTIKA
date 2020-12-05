@@ -35,4 +35,13 @@ public class StringTasksTest {
         assertEquals(StringTasks.findSubstringInString("Ggot", "g"), 1);
         assertEquals(StringTasks.findSubstringInString("darkness", "b"), -1);
     }
+
+    @Test
+    public void testFindSubstringInSecondHalfString() {
+        assertEquals(StringTasks.findSubstringInSecondHalfString("better", "ter"), 3);
+        assertEquals(StringTasks.findSubstringInSecondHalfString("seven", "en"), 3);
+        assertEquals(StringTasks.findSubstringInSecondHalfString("late", "te"), 2);
+        assertEquals(StringTasks.findSubstringInSecondHalfString("real", "bbb"), -1);
+        assertEquals(StringTasks.findSubstringInSecondHalfString("", "a"), -1);
+    }
 }
