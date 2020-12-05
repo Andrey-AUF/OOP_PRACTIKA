@@ -12,7 +12,7 @@ public class StringTasks {
         }
     }
 
-   public void sameStrings() {
+    public void sameStrings() {
         String s1 = "A";
         String s2 = new String(s1);
 
@@ -29,7 +29,13 @@ public class StringTasks {
         check.getArrayOfBytes("ping");
         check.sameStrings();
         System.out.println(check.isPalindrome("222"));
+        System.out.println(check.isSameRegister("aaa", "Aaa"));
     }
+
+    public boolean isSameRegister(String strFirst, String strSecond) {
+        return strFirst.equalsIgnoreCase(strSecond) && !strFirst.equals(strSecond);
+    }
+
     public boolean isPalindrome(String str) {
         String palindrome = new StringBuilder(str).reverse().toString();
         return str.equals(palindrome);
