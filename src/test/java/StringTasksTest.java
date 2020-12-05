@@ -52,4 +52,11 @@ public class StringTasksTest {
         assertEquals(StringTasks.lastInFirstLineOfFirstLine("integer", "a"), -1);
         assertEquals(StringTasks.lastInFirstLineOfFirstLine("9798676", "9"), 2);
     }
+
+    @Test
+    public void testCountStrings() {
+        assertEquals(StringTasks.countStrings(new String[]{"mother", "cat", "black", "pay pal", "respect"}, "p", "l"), 1);
+        assertEquals(StringTasks.countStrings(new String[]{"mother", "cat", "black", "back", "respect", "among"}, "b", "k"), 2);
+        assertEquals(StringTasks.countStrings(new String[]{"mother", "cat", "black", "pay", "respect", "among"}, "p", "p"), 0);
+    }
 }
