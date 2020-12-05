@@ -5,12 +5,29 @@ public class StringTasks {
         }
     }
 
+    public void getArrayOfBytes(String str) {
+        byte[] bytesValue = str.getBytes();
+        for (int bytes : bytesValue) {
+            System.out.println(bytes);
+        }
+    }
+
+   public void sameStrings() {
+        String s1 = "A";
+        String s2 = new String(s1);
+
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+
+    }
+
+    public static StringTasks check = new StringTasks();
+
     public static void main(String[] args) {
-        StringTasks check = new StringTasks();
-        check.outputSeparately("Penskiy");
+        check.getArrayOfBytes("пинг");
         System.out.println("");
-        check.outputSeparately("Andrey");
-        System.out.println("");
-        check.outputSeparately("Nicolaevich!");
+        check.getArrayOfBytes("ping");
+
+        check.sameStrings();
     }
 }

@@ -2,7 +2,6 @@ package ru.ssau.tk.andreyauf.ooppractika;
 
 import static java.lang.Math.decrementExact;
 import static java.lang.Math.sqrt;
-import static java.lang.Math.abs;
 
 public class ArrayTasks {
     static double[] getArithmeticProgression(int n, double a1, double d) {
