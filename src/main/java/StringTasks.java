@@ -50,4 +50,8 @@ public class StringTasks {
         return str.indexOf(substring, str.length() / 2);
     }
 
+    public static int lastInFirstLineOfFirstLine(String str, String subStr) {
+        return str.lastIndexOf(subStr, str.length() / 2);
+    }
+
 }
