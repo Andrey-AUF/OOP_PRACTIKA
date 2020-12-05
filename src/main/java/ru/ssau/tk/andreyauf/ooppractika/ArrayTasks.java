@@ -2,6 +2,7 @@ package ru.ssau.tk.andreyauf.ooppractika;
 
 import static java.lang.Math.decrementExact;
 import static java.lang.Math.sqrt;
+import static java.lang.Math.abs;
 
 public class ArrayTasks {
     static double[] getArithmeticProgression(int n, double a1, double d) {
@@ -12,9 +13,11 @@ public class ArrayTasks {
         }
         return array;
     }
+
     public int[] arrayLength(int l) {
         return new int[l];
     }
+
     public int[] generateOnesArray(int l) {
         int[] ones = new int[l];
         for (int i = 0; i < l; i++) {
@@ -24,6 +27,7 @@ public class ArrayTasks {
         ones[l - 1] = 2;
         return ones;
     }
+
     public int[] generateArray(int l) {
         int[] myArray = new int[l];
         int k = 1;
@@ -33,6 +37,7 @@ public class ArrayTasks {
         }
         return myArray;
     }
+
     public int[] generateArrayDecreasingEven(int l) {
         int[] myArray = new int[l];
         int k = 2 * l;
@@ -42,6 +47,7 @@ public class ArrayTasks {
         }
         return myArray;
     }
+
     public int[] generateArrayFibonacciNumbers(int l) {
         if (l == 1) {
             return new int[]{1};
@@ -57,6 +63,7 @@ public class ArrayTasks {
         }
         return fibArray;
     }
+
     public int[] generateArraySqrIndex(int l) {
         int[] taskArray = new int[l];
         for (int i = 0; i < l; i++) {
@@ -64,6 +71,7 @@ public class ArrayTasks {
         }
         return taskArray;
     }
+
     public double[] quadraticSolution(double a, double b, double c) {
         double D = b * b - 4 * a * c;
         if ((D == 0) & (a > 0)) {
@@ -84,6 +92,7 @@ public class ArrayTasks {
         }
         return new double[0];
     }
+
     public int[] arrayNumbersWithoutDivisorsThree(int l) {
         int[] numbersArray = new int[l];
         int k = 1;
@@ -105,6 +114,7 @@ public class ArrayTasks {
         }
         return bProgression;
     }
+
     public double[] getArrayDivisors(int c, int l) {
         double[] divisors = new double[]{};
         int i = 1;
@@ -124,6 +134,7 @@ public class ArrayTasks {
         }
         return false;
     }
+
     static boolean checkNull(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
@@ -132,11 +143,13 @@ public class ArrayTasks {
         }
         return false;
     }
+
     static void changeSign(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = -1 * array[i];
         }
     }
+
     public int countEvenNumbers(int[] numbers) {
         int k = 0;
         for (int i = 0; i < numbers.length; i++) {
@@ -146,6 +159,7 @@ public class ArrayTasks {
         }
         return k;
     }
+
     public Integer findMax(int[] arrayValues) {
         if (arrayValues.length > 0) {
             int maxValue = arrayValues[0];
@@ -158,6 +172,7 @@ public class ArrayTasks {
         }
         return null;
     }
+
     public int[] symmetricArray(int l) {
         int[] symmetric = new int[l];
         if (l % 2 != 0) {
@@ -183,6 +198,7 @@ public class ArrayTasks {
             return symmetric;
         }
     }
+
     public int sumOfEvenIndex(int[] values) {
         int sum = 0;
         for (int i = 0; i < values.length; i++) {
@@ -192,6 +208,7 @@ public class ArrayTasks {
         }
         return sum;
     }
+
     static boolean findMoreDivisors(int[] values) {
         int k1 = 0;
         int k2 = 0;
@@ -205,6 +222,7 @@ public class ArrayTasks {
         }
         return k1 > k2;
     }
+
     public int findMostCommonElement(int[] numbers) {
         int num = numbers[0];
         int max_common = 1;
@@ -223,6 +241,7 @@ public class ArrayTasks {
         }
         return 0;
     }
+
     static int findIndexOfNumber(int[] values, int c) {
         for (int i = 0; i < values.length; i++) {
             if (values[i] == c) {
@@ -231,6 +250,7 @@ public class ArrayTasks {
         }
         return 0;
     }
+
     static void exchangedMaxAndMin(int[] array) {
         int min = array[0];
         int indexMin = 0;
@@ -249,11 +269,13 @@ public class ArrayTasks {
         array[indexMax] = min;
         array[indexMin] = max;
     }
+
     static void bitwiseNOT(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = ~array[i];
         }
     }
+
     public int[] arrayBitwiseNot(int[] yesArray) {
         int[] notArray = new int[yesArray.length];
         for (int i = 0; i < yesArray.length; i++) {
@@ -261,6 +283,7 @@ public class ArrayTasks {
         }
         return notArray;
     }
+
     static boolean[] findEvenNumbers(int[] array) {
         boolean[] bool = new boolean[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -272,6 +295,7 @@ public class ArrayTasks {
         }
         return bool;
     }
+
     static int[][] createTwoDimensionalArray(int n) {
         int[][] array = new int[n][];
         int m = n;
@@ -286,6 +310,7 @@ public class ArrayTasks {
         }
         return array;
     }
+
     public static void main(String[] args) {
         String[] str = {"I ", "love ", "Java"};
         printStrings(str);
@@ -296,6 +321,7 @@ public class ArrayTasks {
             System.out.print(s);
         }
     }
+
     public static int[] sumNextElements(int[] array) {
         if (array.length % 2 == 0) {
             int[] resultArray = new int[array.length / 2];
@@ -311,6 +337,7 @@ public class ArrayTasks {
         resultArray[resultArray.length - 1] = array[array.length - 1];
         return resultArray;
     }
+
     public static int[] convertLongToTwoInts(long number) {
         return new int[]{(int) (number >> 32), (int) number};
     }
@@ -318,4 +345,5 @@ public class ArrayTasks {
     public static long convertTwoIntsToLong(int first, int last) {
         return ((long) last | (long) first << 32);
     }
+
 }
