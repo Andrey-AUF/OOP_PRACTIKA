@@ -27,7 +27,12 @@ public class StringTasks {
         check.getArrayOfBytes("пинг");
         System.out.println("");
         check.getArrayOfBytes("ping");
-
         check.sameStrings();
+        System.out.println(check.isPalindrome("222"));
+    }
+    public boolean isPalindrome(String str) {
+        String palindrome = new StringBuilder(str).reverse().toString();
+        return str.equals(palindrome);
+
     }
 }
