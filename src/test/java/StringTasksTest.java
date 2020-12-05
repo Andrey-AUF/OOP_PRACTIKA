@@ -59,4 +59,11 @@ public class StringTasksTest {
         assertEquals(StringTasks.countStrings(new String[]{"mother", "cat", "black", "back", "respect", "among"}, "b", "k"), 2);
         assertEquals(StringTasks.countStrings(new String[]{"mother", "cat", "black", "pay", "respect", "among"}, "p", "p"), 0);
     }
+
+    @Test
+    public void testNewCountOfStrings() {
+        assertEquals(StringTasks.newCountOfStrings(new String[]{"    mother", "cat    ", "black   ", "pay pal", "respect", "among"}, "p", "l"), 1);
+        assertEquals(StringTasks.newCountOfStrings(new String[]{"mother", "cat", "black", "  back   ", "respect    ", "among   "}, "b", "k"), 2);
+        assertEquals(StringTasks.newCountOfStrings(new String[]{"mother  ", "cat  ", " black", "    pay", "respect", "among"}, "p", "p"), 0);
+    }
 }
