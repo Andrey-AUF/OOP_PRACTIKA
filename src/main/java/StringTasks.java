@@ -92,4 +92,9 @@ public class StringTasks {
         return str.substring(from, to);
     }
 
+    public static String concatenateStrings(String[] arrayStr) {
+        return String.join(", ", arrayStr);
+    }
+
+
 }

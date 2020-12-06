@@ -82,4 +82,9 @@ public class StringTasksTest {
         assertEquals(StringTasks.getSubstringInString("String tasks tests", 0, 1), "S");
         assertEquals(StringTasks.getSubstringInString("String tasks tests", 10, 20), "ks tests");
     }
+    @Test
+    public void testConcatenateStrings() {
+        assertEquals(StringTasks.concatenateStrings(new String[]{"hello", "how", "are", "you"}), "hello, how, are, you");
+        assertEquals(StringTasks.concatenateStrings(new String[]{"better", "late", "then","never", "but", "better","never", "late"}), "better, late, then, never, but, better, never, late");
+    }
 }
