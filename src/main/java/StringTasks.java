@@ -78,4 +78,18 @@ public class StringTasks {
         }
         return strFirst;
     }
+
+    public static String getSubstringInString(String str, int from, int to) {
+        if (from < 0) {
+            from = 0;
+        }
+        if (to > str.length()) {
+            to = str.length();
+        }
+        if (from == to) {
+            return "";
+        }
+        return str.substring(from, to);
+    }
+
 }

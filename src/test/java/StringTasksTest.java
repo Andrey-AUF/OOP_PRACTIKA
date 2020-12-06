@@ -66,10 +66,20 @@ public class StringTasksTest {
         assertEquals(StringTasks.newCountOfStrings(new String[]{"mother", "cat", "black", "  back   ", "respect    ", "among   "}, "b", "k"), 2);
         assertEquals(StringTasks.newCountOfStrings(new String[]{"mother  ", "cat  ", " black", "    pay", "respect", "among"}, "p", "p"), 0);
     }
+
     @Test
     public void testNewString() {
         assertEquals(StringTasks.newString("opopopopo", "opo", "po"), "popppo");
         assertEquals(StringTasks.newString("корона", "ор", "к"), "ккона");
         assertEquals(StringTasks.newString("command", "mm", "nn"), "connand");
+    }
+
+    @Test
+    public void testGetSubstringInString() {
+        assertEquals(StringTasks.getSubstringInString("String tasks tests", 1, 1), "");
+        assertEquals(StringTasks.getSubstringInString("String tasks tests", 5, 7), "g ");
+        assertEquals(StringTasks.getSubstringInString("String tasks tests", -10, 3), "Str");
+        assertEquals(StringTasks.getSubstringInString("String tasks tests", 0, 1), "S");
+        assertEquals(StringTasks.getSubstringInString("String tasks tests", 10, 20), "ks tests");
     }
 }
