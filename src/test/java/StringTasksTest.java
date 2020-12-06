@@ -82,15 +82,24 @@ public class StringTasksTest {
         assertEquals(StringTasks.getSubstringInString("String tasks tests", 0, 1), "S");
         assertEquals(StringTasks.getSubstringInString("String tasks tests", 10, 20), "ks tests");
     }
+
     @Test
     public void testConcatenateStrings() {
         assertEquals(StringTasks.concatenateStrings(new String[]{"hello", "how", "are", "you"}), "hello, how, are, you");
-        assertEquals(StringTasks.concatenateStrings(new String[]{"better", "late", "then","never", "but", "better","never", "late"}), "better, late, then, never, but, better, never, late");
+        assertEquals(StringTasks.concatenateStrings(new String[]{"better", "late", "then", "never", "but", "better", "never", "late"}), "better, late, then, never, but, better, never, late");
     }
+
     @Test
     public void testGetNewString() {
         assertEquals(StringTasks.getNewString("012345"), "543210");
         assertEquals(StringTasks.getNewString("434dfdg43"), "846d4d230");
         assertEquals(StringTasks.getNewString("AABBCC"), "C4B2A0");
+    }
+
+    @Test
+    public void testGetStringOfNumbers() {
+        assertEquals(StringTasks.getStringOfNumbers(2), "01");
+        assertEquals(StringTasks.getStringOfNumbers(8), "01234567");
+        assertEquals(StringTasks.getStringOfNumbers(-7), "");
     }
 }

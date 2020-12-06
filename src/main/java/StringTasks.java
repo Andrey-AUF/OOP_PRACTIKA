@@ -25,6 +25,7 @@ public class StringTasks {
         check.sameStrings();
         System.out.println(check.isPalindrome("222"));
         System.out.println(check.isSameRegister("aaa", "Aaa"));
+        System.out.println(getStringOfNumbers(10000));
     }
 
     public boolean isSameRegister(String strFirst, String strSecond) {
@@ -107,5 +108,12 @@ public class StringTasks {
         return strBuilder.toString();
     }
 
+    public static String getStringOfNumbers(int number) {
+        StringBuilder stringNumbers = new StringBuilder();
+        for (int i = 0; i < number; i++) {
+            stringNumbers.append(i);
+        }
+        return stringNumbers.toString();
 
+    }
 }
