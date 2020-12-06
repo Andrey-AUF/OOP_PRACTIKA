@@ -1,3 +1,5 @@
+import java.nio.charset.Charset;
+import java.util.Arrays;
 public class StringTasks {
 
     public void getArrayOfBytes(String str) {
@@ -26,6 +28,8 @@ public class StringTasks {
         System.out.println(check.isPalindrome("222"));
         System.out.println(check.isSameRegister("aaa", "Aaa"));
         System.out.println(getStringOfNumbers(10000));
+        Charset charset = Charset.defaultCharset();
+        System.out.println(charset);
     }
 
     public boolean isSameRegister(String strFirst, String strSecond) {
@@ -116,4 +120,5 @@ public class StringTasks {
         return stringNumbers.toString();
 
     }
+
 }
