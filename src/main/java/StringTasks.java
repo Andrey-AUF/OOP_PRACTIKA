@@ -96,5 +96,16 @@ public class StringTasks {
         return String.join(", ", arrayStr);
     }
 
+    public static String getNewString(String str) {
+        StringBuilder strBuilder = new StringBuilder(str);
+        for (int i = 0; i < str.length(); i++) {
+            if (i % 2 == 0) {
+                strBuilder.replace(i, i + 1, i + "");
+            }
+        }
+        strBuilder.reverse();
+        return strBuilder.toString();
+    }
+
 
 }

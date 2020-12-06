@@ -87,4 +87,10 @@ public class StringTasksTest {
         assertEquals(StringTasks.concatenateStrings(new String[]{"hello", "how", "are", "you"}), "hello, how, are, you");
         assertEquals(StringTasks.concatenateStrings(new String[]{"better", "late", "then","never", "but", "better","never", "late"}), "better, late, then, never, but, better, never, late");
     }
+    @Test
+    public void testGetNewString() {
+        assertEquals(StringTasks.getNewString("012345"), "543210");
+        assertEquals(StringTasks.getNewString("434dfdg43"), "846d4d230");
+        assertEquals(StringTasks.getNewString("AABBCC"), "C4B2A0");
+    }
 }
