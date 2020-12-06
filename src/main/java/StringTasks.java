@@ -35,6 +35,14 @@ public class StringTasks {
         System.out.println(changeCharsetToString("Василий Иванович", StandardCharsets.UTF_8, StandardCharsets.US_ASCII));
         System.out.println(changeCharsetToString("Василий Иванович", StandardCharsets.UTF_8, StandardCharsets.UTF_16LE));
         System.out.println(changeCharsetToString("Василий Иванович", StandardCharsets.UTF_8, StandardCharsets.ISO_8859_1));
+        Matrix matrix = new Matrix(2, 2);
+        matrix.setAt(0, 0, 1);
+        matrix.setAt(0, 1, 2);
+        matrix.setAt(1, 0, -3);
+        matrix.setAt(1, 1, -4);
+        StringTasks.getDescription(matrix);
+        StringTasks.getDescription(new Person("Andrey", "Penskiy", 159753963));
+        StringTasks.getDescription(new Point(6, 6, 6));
     }
 
     public boolean isSameRegister(String strFirst, String strSecond) {
@@ -125,8 +133,10 @@ public class StringTasks {
         return stringNumbers.toString();
 
     }
-    public static String changeCharsetToString(String str, Charset charsetFirst, Charset charsetSecond) {       //3.24 смена кодировки для входной строки
+    public static String changeCharsetToString(String str, Charset charsetFirst, Charset charsetSecond) {
         return new String(str.getBytes(charsetFirst), charsetSecond);
     }
-
+    public static void getDescription(Object obj) {
+        System.out.println("Описание объекта: " + obj);
+    }
 }
