@@ -72,5 +72,10 @@ public class StringTasks {
         return number;
     }
 
-
+    public static String newString(String strFirst, String strSecond, String strThird) {
+        for (int i = 0; i < 100 && strFirst.contains(strSecond); i++) {
+            strFirst = strFirst.replaceAll(strSecond, strThird);
+        }
+        return strFirst;
+    }
 }

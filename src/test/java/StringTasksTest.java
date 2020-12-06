@@ -66,4 +66,10 @@ public class StringTasksTest {
         assertEquals(StringTasks.newCountOfStrings(new String[]{"mother", "cat", "black", "  back   ", "respect    ", "among   "}, "b", "k"), 2);
         assertEquals(StringTasks.newCountOfStrings(new String[]{"mother  ", "cat  ", " black", "    pay", "respect", "among"}, "p", "p"), 0);
     }
+    @Test
+    public void testNewString() {
+        assertEquals(StringTasks.newString("opopopopo", "opo", "po"), "popppo");
+        assertEquals(StringTasks.newString("корона", "ор", "к"), "ккона");
+        assertEquals(StringTasks.newString("command", "mm", "nn"), "connand");
+    }
 }
