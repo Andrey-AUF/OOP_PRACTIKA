@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Road extends JPanel implements ActionListener {
     Timer mainTimer = new Timer(20, this);
-    Image img = new ImageIcon("F1/res/doroga.jpg").getImage();
+    Image img = new ImageIcon("F1/res/lines-asphalt-marking-stripes-yellow-texture.jpg").getImage();
     Player p = new Player();
     public Road(){
         mainTimer.start();

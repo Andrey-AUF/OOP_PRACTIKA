@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Player {
     Image img = new ImageIcon("F1/res/2377 (1).png").getImage();
-    int v = 4;
+    int v = 40;
     int dv = 0;
     int s = 0;
     int layer1 = 0;
