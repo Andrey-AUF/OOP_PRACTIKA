@@ -3,8 +3,11 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Player {
+    public static final int MAX_V = 50;
+    public static final int MAX_TOP = 10;
+    public static final int MAX_BOTTOM = 560;
     Image img = new ImageIcon("F1/res/2377 (1).png").getImage();
-    int v = 0;
+    int v =0 ;
     int dv = 0;
     int s = 0;
     int layer1 = 0;
@@ -17,7 +20,11 @@ public class Player {
     public void move() {
         s += v;
         v += dv;
-        y += dy;
+        if (v <= 0) v = 0;
+        if (v >= MAX_V) v = MAX_V;
+        y -= dy;
+        if (y <= MAX_TOP) y = MAX_TOP;
+        if (y >= MAX_BOTTOM) y = MAX_BOTTOM;
         if (layer2 - v < 0) {
             layer1 = 0;
             layer2 = 4608;
