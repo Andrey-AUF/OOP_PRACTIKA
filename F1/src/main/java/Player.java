@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class Player {
     Image img = new ImageIcon("F1/res/2377 (1).png").getImage();
@@ -22,5 +23,13 @@ public class Player {
             layer1 -= v;
             layer2 -= v;
         }
+    }
+    public void keyPressed(KeyEvent e){
+        JOptionPane.showMessageDialog(null,"key pressed");
+
+    }
+    public void keyReleased(KeyEvent e){
+        JOptionPane.showMessageDialog(null,"key realised");
+
     }
 }
