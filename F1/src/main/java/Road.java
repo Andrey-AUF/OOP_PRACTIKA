@@ -14,6 +14,7 @@ public class Road extends JPanel implements ActionListener {
     public void paint(Graphics g) {
         g = (Graphics2D) g;
         g.drawImage(img, p.layer1, 0, null);
+        g.drawImage(img, p.layer2, 0, null);
         g.drawImage(p.img, p.x, p.y, null);
     }
 

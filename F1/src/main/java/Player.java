@@ -7,12 +7,20 @@ public class Player {
     int dv = 0;
     int s = 0;
     int layer1 = 0;
+    int layer2 = 4608;
     int x = 100;
     int y = 30;
 
 
     public void move() {
         s += v;
-        layer1 -= v;
+        if (layer2 - v < 0) {
+            layer1 = 0;
+            layer2 = 4608;
+
+        } else {
+            layer1 -= v;
+            layer2 -= v;
+        }
     }
 }
