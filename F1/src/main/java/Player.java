@@ -11,11 +11,13 @@ public class Player {
     int layer2 = 4608;
     int x = 100;
     int y = 30;
+    int dy = 0;
 
 
     public void move() {
         s += v;
         v += dv;
+        y += dy;
         if (layer2 - v < 0) {
             layer1 = 0;
             layer2 = 4608;
@@ -35,7 +37,10 @@ public class Player {
             dv = -1;
         }
         if (key == KeyEvent.VK_UP) {
-            dv = 1;
+            dy = 3;
+        }
+        if (key == KeyEvent.VK_DOWN) {
+            dy = -5;
         }
 
     }
@@ -45,5 +50,9 @@ public class Player {
         if (key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_LEFT) {
             dv = 0;
         }
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) {
+            dy = 0;
+        }
+
     }
 }
