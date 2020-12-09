@@ -6,7 +6,10 @@ public class Player {
     public static final int MAX_V = 50;
     public static final int MAX_TOP = 1;
     public static final int MAX_BOTTOM = 560;
-    Image img = new ImageIcon("F1/res/2377 (1).png").getImage();
+    Image img_C = new ImageIcon("F1/res/2377 (1).png").getImage();
+    Image img_L = new ImageIcon("F1/res/car-top-view.png").getImage();
+    Image img_R = new ImageIcon("F1/res/car-top-view.png").getImage();
+    Image img = img_C;
 
     public Rectangle getRect() {
         return new Rectangle(x, y, 780, 580);
@@ -49,10 +52,12 @@ public class Player {
             dv = -1;
         }
         if (key == KeyEvent.VK_UP) {
-            dy = 3;
+            dy = 5;
+            img = img_L;
         }
         if (key == KeyEvent.VK_DOWN) {
             dy = -5;
+            img = img_R;
         }
 
     }
@@ -64,6 +69,7 @@ public class Player {
         }
         if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) {
             dy = 0;
+            img = img_C;
         }
 
     }
