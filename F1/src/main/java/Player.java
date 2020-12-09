@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 
 public class Player {
     public static final int MAX_V = 50;
-    public static final int MAX_TOP = 10;
+    public static final int MAX_TOP = 1;
     public static final int MAX_BOTTOM = 560;
     Image img = new ImageIcon("F1/res/2377 (1).png").getImage();
     int v =0 ;
