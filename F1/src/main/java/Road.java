@@ -4,16 +4,39 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
-public class Road extends JPanel implements ActionListener {
+public class Road extends JPanel implements ActionListener, Runnable {
     Timer mainTimer = new Timer(20, this);
     Image img = new ImageIcon("F1/res/lines-asphalt-marking-stripes-yellow-texture.jpg").getImage();
     Player p = new Player();
-    public Road(){
+    Thread enemiesFactory = new Thread(this);
+    java.util.List<Enemy> enemies = new ArrayList<Enemy>();
+
+    public Road() {
         mainTimer.start();
+        enemiesFactory.start();
         addKeyListener(new MyKeyAdapter());
         setFocusable(true);
     }
+
+    @Override
+    public void run() {
+        while (true) {
+            Random rand = new Random();
+            try {
+                Thread.sleep(rand.nextInt(2000));
+                enemies.add(new Enemy(1200, rand.nextInt(600), rand.nextInt(30), this));
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private class MyKeyAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
@@ -31,6 +54,16 @@ public class Road extends JPanel implements ActionListener {
         g.drawImage(img, p.layer1, 0, null);
         g.drawImage(img, p.layer2, 0, null);
         g.drawImage(p.img, p.x, p.y, null);
+        Iterator<Enemy> i = enemies.iterator();
+        while (i.hasNext()) {
+            Enemy e = i.next();
+            if (e.x >= 2400 || e.x <= -2400) {
+                i.remove();
+            } else {
+                e.move();
+                g.drawImage(e.img, e.x, e.y, null);
+            }
+        }
     }
 
     public void actionPerformed(ActionEvent e) {
