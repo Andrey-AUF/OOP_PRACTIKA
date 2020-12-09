@@ -78,7 +78,8 @@ public class Road extends JPanel implements ActionListener, Runnable {
         while (i.hasNext()) {
             Enemy e = i.next();
             if (p.getRect().intersects(e.getRect())) {
-                i.remove();
+                JOptionPane.showMessageDialog(null,"Игра окончена");
+                System.exit(1);
             }
         }
     }

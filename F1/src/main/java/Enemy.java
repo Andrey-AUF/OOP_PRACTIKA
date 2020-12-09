@@ -5,10 +5,10 @@ public class Enemy {
     int x;
     int y;
     int v;
-    Image img = new ImageIcon("F1/res/81ce14b89dd9aac90649db28065bdaef.png").getImage();
+    Image img = new ImageIcon("F1/res/pngtree-classic-old-luxury-car-design-png-image_1040384.jpg").getImage();
     Road road;
     public Rectangle getRect(){
-        return new Rectangle(x,y,180,101);
+        return new Rectangle(x,y,100,101);
     }
 
     public Enemy(int x, int y, int v, Road road) {
