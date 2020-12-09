@@ -77,7 +77,15 @@ public class Road extends JPanel implements ActionListener, Runnable {
         p.move();
         repaint();
         testCollisionWithEnemies();
+        testWin();
 
+    }
+
+    private void testWin() {
+        if (p.s>2000){
+            JOptionPane.showMessageDialog(null,"Вы выйграли");
+             System.exit(0);
+        }
     }
 
     private void testCollisionWithEnemies() {
