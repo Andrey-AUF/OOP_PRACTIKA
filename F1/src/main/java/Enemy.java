@@ -5,8 +5,11 @@ public class Enemy {
     int x;
     int y;
     int v;
-    Image img = new ImageIcon("F1/res/car-top-view.png").getImage();
+    Image img = new ImageIcon("F1/res/81ce14b89dd9aac90649db28065bdaef.png").getImage();
     Road road;
+    public Rectangle getRect(){
+        return new Rectangle(x,y,180,101);
+    }
 
     public Enemy(int x, int y, int v, Road road) {
         this.x = x;

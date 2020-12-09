@@ -69,6 +69,17 @@ public class Road extends JPanel implements ActionListener, Runnable {
     public void actionPerformed(ActionEvent e) {
         p.move();
         repaint();
+        testCollisionWithEnemies();
 
+    }
+
+    private void testCollisionWithEnemies() {
+        Iterator<Enemy> i = enemies.iterator();
+        while (i.hasNext()) {
+            Enemy e = i.next();
+            if (p.getRect().intersects(e.getRect())) {
+                i.remove();
+            }
+        }
     }
 }
