@@ -5,7 +5,7 @@ public class Enemy {
     int x;
     int y;
     int v;
-    Image img = new ImageIcon("F1/res/pngtree-classic-old-luxury-car-design-png-image_1040384.jpg").getImage();
+    Image img = new ImageIcon("F1/res/gratis-png-mercedes-mercedes-benz-mercedes-benz-top-car-modelo-de-vehiculo-plateado-thumbnail.png").getImage();
     Road road;
     public Rectangle getRect(){
         return new Rectangle(x,y,100,101);

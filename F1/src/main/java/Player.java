@@ -6,13 +6,13 @@ public class Player {
     public static final int MAX_V = 50;
     public static final int MAX_TOP = 1;
     public static final int MAX_BOTTOM = 560;
-    Image img_C = new ImageIcon("F1/res/2377 (1).png").getImage();
+    Image img_C = new ImageIcon("F1/res/pngtree-classic-old-luxury-car-design-png-image_1040384.jpg").getImage();
     Image img_L = new ImageIcon("F1/res/car-top-view.png").getImage();
     Image img_R = new ImageIcon("F1/res/car-top-view.png").getImage();
     Image img = img_C;
 
     public Rectangle getRect() {
-        return new Rectangle(x, y, 780, 580);
+        return new Rectangle(x, y, 200, 200);
     }
 
     int v = 0;
@@ -20,7 +20,7 @@ public class Player {
     int s = 0;
     int layer1 = 0;
     int layer2 = 4608;
-    int x = 100;
+    int x = 10;
     int y = 30;
     int dy = 0;
 
