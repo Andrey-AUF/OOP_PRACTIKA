@@ -82,7 +82,7 @@ public class Road extends JPanel implements ActionListener, Runnable {
     }
 
     private void testWin() {
-        if (p.s>2000){
+        if (p.s>20000){
             JOptionPane.showMessageDialog(null,"Вы выйграли");
              System.exit(0);
         }
