@@ -14,6 +14,7 @@ public class SnakeGameMain extends JPanel implements ActionListener {
     public static int speed = 10;
 
     Snake s = new Snake(5, 6, 5, 5);
+    Apple apple = new Apple(Math.abs((int) Math.random() * SnakeGameMain.WIDTH - 1), Math.abs((int) (Math.random() * SnakeGameMain.HEIGHT - 1)));
     Timer timer = new Timer(1000 / speed, this);
 
     public SnakeGameMain() {
@@ -36,10 +37,16 @@ public class SnakeGameMain extends JPanel implements ActionListener {
             g.drawLine(0, y, WIDTH * SCALE, y);
 
         }
-        for (int l = 0; l < s.length; l++) {
+        g.setColor(Color.RED);
+        g.fillOval(apple.posX * SCALE + 1, apple.posY * SCALE + 1, SCALE - 1, SCALE - 1);
+
+        for (int l = 1; l < s.length; l++) {
             g.setColor(Color.green);
             g.fillRect(s.sX[l] * SCALE + 1, s.sY[l] * SCALE + 1, SCALE - 1, SCALE - 1);
+            g.setColor(Color.WHITE);
+            g.fillRect(s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1, SCALE - 1, SCALE - 1);
         }
+
     }
 
     public static void main(String[] args) {
@@ -55,6 +62,24 @@ public class SnakeGameMain extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         s.move();
+        if ((s.sX[0] == apple.posX) && (s.sY[0] == apple.posY)) {
+            apple.setRandomPosition();
+            s.length++;
+        }
+        for (int l = 1; l < s.length; l++) {
+            if ((s.sX[l] == apple.posX) && (s.sY[l] == apple.posY)) {
+                apple.setRandomPosition();
+            }
+            if ((s.sX[0] == s.sX[l]) && (s.sY[0] == s.sY[l])) {
+                JOptionPane.showMessageDialog(null, "Вы проиграли, начать заного?");
+                jFrame.setVisible(false);
+                s.length = 2;
+                s.direction = 0;
+                apple.setRandomPosition();
+                jFrame.setVisible(true);
+                timer.start();
+            }
+        }
         repaint();
 
     }
