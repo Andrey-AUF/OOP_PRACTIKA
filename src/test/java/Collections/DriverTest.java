@@ -35,7 +35,6 @@ public class DriverTest {
         assertTrue(thirdDriver.equals(firstDriver));
         assertTrue(secondDriver.equals(secondDriver));
         assertFalse(firstDriver.equals(secondDriver));
-        assertFalse(thirdDriver.equals(new Person()));
         assertFalse(secondDriver.equals(null));
     }
 

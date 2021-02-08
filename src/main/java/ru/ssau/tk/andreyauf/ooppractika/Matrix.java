@@ -1,3 +1,5 @@
+package ru.ssau.tk.andreyauf.ooppractika;
+
 import java.util.StringJoiner;
 
 public class Matrix {
