@@ -1,12 +1,20 @@
 package ru.ssau.tk.andreyauf.ooppractika;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     private String firstName;
     private String lastName;
 
     public Person(String myFirstName, String myLastName){
         firstName = myFirstName;
         lastName = myLastName;
+    }
+
+    public Person(){
+        firstName = "Andrey";
+        lastName = "Penskiy";
+
     }
 
 
