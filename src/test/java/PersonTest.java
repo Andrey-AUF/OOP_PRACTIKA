@@ -8,7 +8,7 @@ public class PersonTest {
 
     @Test
     public void testTestToString() {
-        Person h = new Person("Andrey", "Penskiy", 862495137);
+        Person h = new Person();
         assertEquals(h.toString(), "Andrey Penskiy");
 
 

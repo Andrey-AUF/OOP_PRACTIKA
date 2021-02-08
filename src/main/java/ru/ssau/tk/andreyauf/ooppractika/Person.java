@@ -1,12 +1,10 @@
 package ru.ssau.tk.andreyauf.ooppractika;
 
-import java.util.Date;
-
 public class Person {
     private String firstName;
     private String lastName;
 
-    public Person(String firstName, String lastName, int passportId) {
+    public Person() {
         this.firstName = firstName;
         this.lastName = lastName;
     }

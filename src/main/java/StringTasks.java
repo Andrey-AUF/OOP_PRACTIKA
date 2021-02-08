@@ -43,7 +43,7 @@ public class StringTasks {
         matrix.setAt(1, 0, -3);
         matrix.setAt(1, 1, -4);
         StringTasks.getDescription(matrix);
-        StringTasks.getDescription(new Person("Andrey", "Penskiy", 159753963));
+        StringTasks.getDescription(new Person());
         StringTasks.getDescription(new Point(6, 6, 6));
     }
 

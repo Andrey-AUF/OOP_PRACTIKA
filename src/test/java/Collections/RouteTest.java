@@ -193,4 +193,42 @@ public class RouteTest {
         route3.addIndexLocation(2, warehouse4);
         assertTrue(route1.equals(route3));
     }
+    @Test
+    public void testToString() {
+        Route route = new Route();
+
+        Settlement city = new Settlement();
+        Settlement village = new Settlement();
+        Waypoint depot = new Waypoint();
+        Waypoint warehouse = new Waypoint();
+
+        city.setType(SettlementType.CITY);
+        village.setType(SettlementType.VILLAGE);
+        depot.setType(WaypointType.DEPOT);
+        warehouse.setType(WaypointType.WAREHOUSE);
+
+        city.setName("Samara");
+        village.setName("Korolev");
+        depot.setName("KF");
+        warehouse.setName("Angar");
+
+        city.setLatitude(53.1);
+        village.setLatitude(53.15);
+        depot.setLatitude(53.3);
+        warehouse.setLatitude(53.41);
+
+        city.setLongitude(50.11);
+        village.setLongitude(50.32);
+        depot.setLongitude(50.08);
+        warehouse.setLongitude(50.84);
+
+        route.addLocation(city);
+        route.addLocation(village);
+        route.addLocation(depot);
+        route.addLocation(warehouse);
+        assertEquals(route.toString(), "Settlement: Type: CITY; Name: Samara; Latitude: 53.1; Longitude: 50.11.\n" +
+                "Settlement: Type: VILLAGE; Name: Korolev; Latitude: 53.15; Longitude: 50.32.\n" +
+                "Waypoint: Type: DEPOT; Name: KF; Latitude: 53.3; Longitude: 50.08.\n" +
+                "Waypoint: Type: WAREHOUSE; Name: Angar; Latitude: 53.41; Longitude: 50.84.\n");
+    }
 }

@@ -23,5 +23,9 @@ public class Waypoint extends Location {
     public void setSettlement(Settlement settlement) {
         this.settlement = settlement;
     }
+    @Override
+    public String toString() {
+        return "Waypoint: Type: " + type  + "; Name: " + getName() + "; Latitude: " + getLatitude() + "; Longitude: " + getLongitude() + ".";
+    }
 }
 
