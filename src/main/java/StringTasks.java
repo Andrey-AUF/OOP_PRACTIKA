@@ -1,5 +1,7 @@
+import ru.ssau.tk.andreyauf.ooppractika.Person;
+import ru.ssau.tk.andreyauf.ooppractika.Point;
+
 import java.nio.charset.Charset;
-import java.util.Arrays;
 import java.nio.charset.StandardCharsets;
 public class StringTasks {
 

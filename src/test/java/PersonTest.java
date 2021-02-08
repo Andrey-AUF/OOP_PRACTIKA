@@ -1,6 +1,6 @@
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.ssau.tk.andreyauf.ooppractika.Person;
 
 import static org.testng.Assert.*;
 

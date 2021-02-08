@@ -1,3 +1,5 @@
+package ru.ssau.tk.andreyauf.ooppractika;
+
 import static java.lang.Math.sqrt;
 public class Point {
     public final double x;

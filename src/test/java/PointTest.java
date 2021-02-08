@@ -1,4 +1,5 @@
 import org.testng.annotations.Test;
+import ru.ssau.tk.andreyauf.ooppractika.Point;
 
 import static org.testng.Assert.*;
 
