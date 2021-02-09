@@ -11,6 +11,9 @@
     <modules>
         <module>F1</module>
         <module>SNAKE</module>
+        <module>Pong</module>
+        <module>untitled</module>
+        <module>PONG</module>
     </modules>
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
