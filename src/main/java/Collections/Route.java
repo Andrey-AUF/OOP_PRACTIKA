@@ -2,7 +2,7 @@ package Collections;
 
 import java.util.*;
 
-public final class Route implements Iterable<Location> {
+public final class Route implements Iterable<Location>, Comparable<Route> {
     private final ArrayList<Location> locations = new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
@@ -41,6 +41,7 @@ public final class Route implements Iterable<Location> {
     public Location getLastLocation() {
         return locations.get(locations.size() - 1);
     }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -52,7 +53,9 @@ public final class Route implements Iterable<Location> {
         Route route = (Route) object;
         List<Location> locationsInList = route.getLocation();
 
-        if (locationsInList.size() != this.locations.size()) { return false; }
+        if (locationsInList.size() != this.locations.size()) {
+            return false;
+        }
 
         for (int i = 0; i < locations.size(); i++) {
             if (!(locationsInList.get(i).equals(locations.get(i)))) {
@@ -66,6 +69,7 @@ public final class Route implements Iterable<Location> {
     public int hashCode() {
         return Objects.hash(locations);
     }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -94,14 +98,22 @@ public final class Route implements Iterable<Location> {
         }
         return length;
     }
+
     public void deleteLocation(int index) {
         this.locations.remove(index);
     }
+
+    @Override
+    public int compareTo(Route anotherRoute) {
+        return Double.compare(this.length(), anotherRoute.length());
+    }
+
     @Override
     public Iterator<Location> iterator() {
         return new Iterator() {
             private Location location = getFirstLocation();
             private int count = 0;
+
 
             @Override
             public boolean hasNext() {
