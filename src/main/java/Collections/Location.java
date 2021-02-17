@@ -2,11 +2,13 @@ package Collections;
 
 import java.util.Objects;
 
-public class Location {
+public class Location implements Comparable<Location> {
     private int id;
     private String name;
     private double latitude;
     private double longitude;
+    private EquatorComparator equatorComparator = new EquatorComparator();
+
 
     public Location() {
 
@@ -49,7 +51,10 @@ public class Location {
         Location location = (Location) object;
         return id == location.id;
     }
-
+    @Override
+    public int compareTo(Location location) {
+        return equatorComparator.compare(this, location);
+    }
     @Override
     public int hashCode() {
         return Objects.hash(id);

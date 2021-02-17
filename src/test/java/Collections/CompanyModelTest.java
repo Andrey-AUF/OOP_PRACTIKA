@@ -44,9 +44,9 @@ public class CompanyModelTest {
         loneDepot = companyModelOne.addWaypoint("lone Depot", 20.54, 45.85, WaypointType.DEPOT, null);
 
         city2Warehouse = companyModelOne.addWaypoint("Yfa.Warehouse", 21.87, 45.84, WaypointType.WAREHOUSE, city2);
-        driver1 = companyModelOne.addDriver("Anatoly",new Date(121, Calendar.APRIL, 21));
+        driver1 = companyModelOne.addDriver("Anatoly", new Date(121, Calendar.APRIL, 21));
         driver2 = companyModelOne.addDriver("Alice", new Date(127, Calendar.DECEMBER, 5));
-        driver3 = companyModelOne.addDriver("Angelina",new Date(135, Calendar.AUGUST, 16));
+        driver3 = companyModelOne.addDriver("Angelina", new Date(135, Calendar.AUGUST, 16));
 
         route1 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(city1Depot, city1, village2Waypoint, village1Warehouse, city2Warehouse, loneDepot)));
         route2 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(city1Depot, city1, city2Warehouse, loneDepot)));
@@ -163,6 +163,7 @@ public class CompanyModelTest {
         allDrivers.add(driver3);
         assertEquals(allDrivers.size(), 2);
     }
+
     @Test
     public void testAssignRoute() {
         fillModels();
@@ -185,5 +186,22 @@ public class CompanyModelTest {
         List<Route> routes = new ArrayList<>(Arrays.asList(route1, route2, route3, route4, route5));
         Collections.sort(routes);
         assertEquals(routes, new ArrayList<>(Arrays.asList(route3, route2, route5, route1, route4)));
+        assertEquals(Collections.min(routes), route3);
+        assertEquals(Collections.max(routes), route4);
+
+
+    }
+
+    @Test
+    public void testLocationComparator() {
+        fillModels();
+        List<Location> locations = new ArrayList<>(Arrays.asList(village1, village2, city1, city2, village1Warehouse,
+                village2Waypoint, city1Depot, city2Warehouse, loneDepot));
+        assertEquals(Collections.max(locations), city2);
+        assertEquals(Collections.min(locations), village1);
+        Collections.sort(locations);
+        assertEquals(locations, new ArrayList<>(Arrays.asList(village1, village1Warehouse, village2Waypoint, village2,
+                city1, city1Depot, loneDepot, city2, city2Warehouse)));
+
     }
 }
