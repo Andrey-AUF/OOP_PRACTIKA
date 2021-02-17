@@ -7,7 +7,7 @@ public class Text {
     public double width, height;
     public Color color = Color.white;
 
-    public Text(String text, Font font, double x, double y,Color color ) {
+    public Text(String text, Font font, double x, double y, Color color) {
         this.font = font;
         this.text = text;
         this.x = x;

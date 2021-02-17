@@ -46,7 +46,7 @@ public class MainMenu extends JFrame implements Runnable {
         if (mouseListener.getMouseX() > exitGame.x && mouseListener.getMouseX() < exitGame.x + exitGame.width &&
                 mouseListener.getMouseY() > exitGame.y - exitGame.height / 2.0 && mouseListener.getMouseY() < exitGame.y + exitGame.height / 2.0) {
             exitGame.color = new Color(158, 158, 158);
-            if(mouseListener.isMousePressed()){
+            if (mouseListener.isMousePressed()) {
                 Main.changeState(2);
             }
         } else {

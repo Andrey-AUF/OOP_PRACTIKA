@@ -25,8 +25,13 @@ public class ML extends MouseAdapter implements MouseMotionListener {
 
     }
 
-    public double getMouseX() { return this.x;}
-    public double getMouseY() { return this.y;}
+    public double getMouseX() {
+        return this.x;
+    }
+
+    public double getMouseY() {
+        return this.y;
+    }
 
 
     public boolean isMousePressed() {

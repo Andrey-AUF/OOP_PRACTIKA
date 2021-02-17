@@ -78,10 +78,10 @@ public class Ball {
             this.rect.y = Constants.SCREEN_HEIGHT / 2.0;
             this.vx = -150.0;
             this.vy = 100.0;
-            if (leftScore >= Constants.WIN_SCORE){
+            if (leftScore >= Constants.WIN_SCORE) {
                 Main.changeState(2);
             }
-        }else if (this.rect.x > rightPaddle.x+ rightPaddle.wight) {
+        } else if (this.rect.x > rightPaddle.x + rightPaddle.wight) {
             int rightScore = Integer.parseInt(rightScoreText.text);
             rightScore++;
             rightScoreText.text = "" + rightScore;
@@ -89,7 +89,7 @@ public class Ball {
             this.rect.y = Constants.SCREEN_HEIGHT / 2.0;
             this.vx = -150.0;
             this.vy = 100.0;
-            if (rightScore >= Constants.WIN_SCORE){
+            if (rightScore >= Constants.WIN_SCORE) {
                 Main.changeState(2);
             }
 

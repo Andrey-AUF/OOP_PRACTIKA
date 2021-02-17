@@ -231,4 +231,29 @@ public class RouteTest {
                 "Waypoint: Type: DEPOT; Name: KF; Latitude: 53.3; Longitude: 50.08.\n" +
                 "Waypoint: Type: WAREHOUSE; Name: Angar; Latitude: 53.41; Longitude: 50.84.\n");
     }
+    @Test
+    public void testLength() {
+        Settlement village = new Settlement();
+        Settlement city = new Settlement();
+        Waypoint depot = new Waypoint();
+        Waypoint warehouse = new Waypoint();
+        Route testRoute;
+        testRoute = new Route();
+        village.setLatitude(55.4);
+        city.setLatitude(60.8);
+        depot.setLatitude(75.2);
+        warehouse.setLatitude(96.4);
+        village.setLongitude(10.5);
+        city.setLongitude(40.7);
+        depot.setLongitude(12.6);
+        warehouse.setLongitude(6.9);
+        testRoute.addLocation(city);
+        testRoute.addLocation(village);
+        testRoute.addLocation(depot);
+        testRoute.addLocation(warehouse);
+        assertEquals(testRoute.length(), 72.5, 0.1);
+        testRoute.addLocation(city);
+        testRoute.deleteLocation(2);
+        assertEquals(testRoute.length(), 120.9, 0.1);
+    }
 }

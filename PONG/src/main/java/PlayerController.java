@@ -11,7 +11,7 @@ public class PlayerController {
 
     }
 
-    public PlayerController(Rect rect){
+    public PlayerController(Rect rect) {
         this.rect = rect;
         this.keyListener = null;
     }
