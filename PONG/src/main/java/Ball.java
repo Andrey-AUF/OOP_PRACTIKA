@@ -3,15 +3,19 @@ import java.awt.*;
 public class Ball {
     public Rect rect;
     public Rect leftPaddle, rightPaddle;
+    public Text leftScoreText, rightScoreText;
 
-    private double vy = 10.0;
-    private double vx = -250.0;
+    private double vy = 100.0;
+    private double vx = -150.0;
 
-    public Ball(Rect rect, Rect leftPaddle, Rect rightPaddle) {
+    public Ball(Rect rect, Rect leftPaddle, Rect rightPaddle, Text leftScoreText, Text rightScoreText) {
         this.rect = rect;
         this.leftPaddle = leftPaddle;
         this.rightPaddle = rightPaddle;
+        this.leftScoreText = leftScoreText;
+        this.rightScoreText = rightScoreText;
     }
+
 
     public double calculateNewVelocityAngle(Rect paddle) {
         double relativeIntersectY = (paddle.y + (paddle.height / 2.0)) - (this.rect.y + (this.rect.height / 2.0));
@@ -22,9 +26,9 @@ public class Ball {
 
     public void update(double dt) {
         if (vx < 0) {
-            if (this.rect.x + (vx *  dt) < leftPaddle.x + leftPaddle.wight) {
-                if (this.rect.y + (vy *  dt) > leftPaddle.y &&
-                        this.rect.y + (vy *  dt) + this.rect.height < leftPaddle.y + leftPaddle.height) {
+            if (this.rect.x + (vx * dt) < leftPaddle.x + leftPaddle.wight) {
+                if (this.rect.y + (vy * dt) > leftPaddle.y &&
+                        this.rect.y + (vy * dt) + this.rect.height < leftPaddle.y + leftPaddle.height) {
                     double theta = calculateNewVelocityAngle(leftPaddle);
                     double newVx = Math.abs((Math.cos(theta)) * Constants.BALL_SPEED);
                     double newVy = (-Math.sin(theta)) * Constants.BALL_SPEED;
@@ -39,7 +43,7 @@ public class Ball {
         } else if (vx >= 0.0) {
 
             if (this.rect.x + (vx * dt) + rect.wight > rightPaddle.x) {
-                if (this.rect.y + (vy *  dt) > rightPaddle.y &&
+                if (this.rect.y + (vy * dt) > rightPaddle.y &&
                         this.rect.y + (vy * dt) + this.rect.height < rightPaddle.y + rightPaddle.height) {
 
                     double theta = calculateNewVelocityAngle(rightPaddle);
@@ -65,6 +69,31 @@ public class Ball {
 
         this.rect.x += vx * dt;
         this.rect.y += vy * dt;
+
+        if (this.rect.x + this.rect.wight < leftPaddle.x) {
+            int leftScore = Integer.parseInt(leftScoreText.text);
+            leftScore++;
+            leftScoreText.text = "" + leftScore;
+            this.rect.x = Constants.SCREEN_WIDTH / 2.0;
+            this.rect.y = Constants.SCREEN_HEIGHT / 2.0;
+            this.vx = -150.0;
+            this.vy = 100.0;
+            if (leftScore >= Constants.WIN_SCORE){
+                Main.changeState(2);
+            }
+        }else if (this.rect.x > rightPaddle.x+ rightPaddle.wight) {
+            int rightScore = Integer.parseInt(rightScoreText.text);
+            rightScore++;
+            rightScoreText.text = "" + rightScore;
+            this.rect.x = Constants.SCREEN_WIDTH / 2.0;
+            this.rect.y = Constants.SCREEN_HEIGHT / 2.0;
+            this.vx = -150.0;
+            this.vy = 100.0;
+            if (rightScore >= Constants.WIN_SCORE){
+                Main.changeState(2);
+            }
+
+        }
     }
 }
 
