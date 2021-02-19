@@ -204,4 +204,5 @@ public class CompanyModelTest {
                 city1, city1Depot, loneDepot, city2, city2Warehouse)));
 
     }
+
 }
